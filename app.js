@@ -13,9 +13,9 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/',function(req,res){
-  res.sendFile(__dirname,'/index.html')
-})
+app.get('/'),function(req,res){
+  res.sendFile('/index.html')
+}
 
 app.use('/auth', AuthRoute)
 
