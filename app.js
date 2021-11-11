@@ -13,8 +13,8 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', verifyAccessToken, async (req, res, next) => {
-  res.send('Hello from express.')
+app.get('/', async (req, res, next) => {
+  res.sendFile(__dirname, '/index.html')
 })
 
 app.use('/auth', AuthRoute)
